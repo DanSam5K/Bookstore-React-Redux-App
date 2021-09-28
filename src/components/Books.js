@@ -1,7 +1,7 @@
-import React from "react";
-import AddNewBook from "./AddNewBook";
-import ShowBooks from "./ShowBooks";
-import { v4 as uuidv4 } from "uuid";
+import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import AddNewBook from './AddNewBook';
+import ShowBooks from './ShowBooks';
 
 class Books extends React.Component {
   constructor(props) {
@@ -9,22 +9,27 @@ class Books extends React.Component {
     this.state = {
       books: [
         {
-          type: "Science",
-          title: "Book One",
-          author: "author",
-          id: uuidv4(),
-        },
-        { type: "Economy", title: "Book Two", author: "author", id: uuidv4() },
-        {
-          type: "Documentation",
-          title: "Book Three",
-          author: "author",
+          type: 'Science',
+          title: 'Book One',
+          author: 'author',
           id: uuidv4(),
         },
         {
-          type: "Crime",
-          title: "Book Four",
-          author: "author",
+          type: 'Economy',
+          title: 'Book Two',
+          author: 'author',
+          id: uuidv4(),
+        },
+        {
+          type: 'Documentation',
+          title: 'Book Three',
+          author: 'author',
+          id: uuidv4(),
+        },
+        {
+          type: 'Crime',
+          title: 'Book Four',
+          author: 'author',
           id: uuidv4(),
         },
       ],
@@ -32,11 +37,11 @@ class Books extends React.Component {
   }
 
   render() {
-    const bookArray = this.state.books;
+    const { books } = this.state;
     return (
       <div>
-        <ShowBooks bookList={bookArray} />
-        <AddNewBook id="categories" name="categories" selected={true} />
+        <ShowBooks bookList={books} />
+        <AddNewBook id="categories" name="categories" selected />
       </div>
     );
   }

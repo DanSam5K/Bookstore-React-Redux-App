@@ -1,4 +1,4 @@
-import * as Actions from "./bookAction";
+import * as Actions from './bookAction';
 
 const bookReducer = (state = {}, action = {}) => {
   switch (action.type) {
