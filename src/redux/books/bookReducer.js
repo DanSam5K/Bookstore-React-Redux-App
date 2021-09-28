@@ -1,6 +1,6 @@
-import * as Actions from './bookAction';
+import * as Actions from "./bookAction";
 
-const bookReducer = (state = {}, action = {}) => {
+const booksReducer = (state = {}, action = {}) => {
   switch (action.type) {
     case Actions.ADDED_BOOK:
     case Actions.REMOVED_BOOK:
@@ -10,4 +10,4 @@ const bookReducer = (state = {}, action = {}) => {
   }
 };
 
-export default bookReducer;
+export default booksReducer;
