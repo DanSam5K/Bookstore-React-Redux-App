@@ -1,14 +1,3 @@
-const initialBooks = [
-  {
-    title: 'war of dragons',
-    author: 'Arthur vidal',
-    id: 1,
-  },
-  {
-    title: 'Love under rain',
-    author: 'John Guapo',
-    id: 2,
-  },
-];
+const initialBooks = [];
 
 export default initialBooks;
