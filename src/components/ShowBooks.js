@@ -13,18 +13,6 @@ const ShowBooks = (props) => {
         author: 'author',
         genre: 'Fiction',
       },
-      {
-        id: uuidv4(),
-        title: 'Book Two',
-        author: 'author',
-        genre: 'Economy',
-      },
-      {
-        id: uuidv4(),
-        title: 'Book Three',
-        author: 'author',
-        genre: 'Documentation',
-      },
     ],
     removeBook,
   } = props;
@@ -34,9 +22,9 @@ const ShowBooks = (props) => {
       {books.map((book) => (
         <li key={book.id}>
           <div>
-            <p>{book.type}</p>
             <p>{book.title}</p>
             <p>{book.author}</p>
+            <p>{book.genre}</p>
           </div>
           <ul>
             <li>comment</li>
@@ -60,7 +48,11 @@ const ShowBooks = (props) => {
 
 ShowBooks.propTypes = {
   removeBook: PropTypes.func.isRequired,
-  books: PropTypes.func.isRequired,
+  books: PropTypes.instanceOf(Array),
+};
+
+ShowBooks.defaultProps = {
+  books: [],
 };
 
 export default connect((state) => state, { removeBook })(ShowBooks);
