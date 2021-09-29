@@ -4,10 +4,8 @@ export const initialBooks = [];
 
 const books = (state = initialBooks, action) => {
   switch (action.type) {
-    case actions.ADDED_BOOK: {
-      const {
-        id, title, author, genre,
-      } = action;
+    case actions.ADD_BOOK: {
+      const { id, title, author, genre } = action;
       return [
         ...state,
         {
@@ -18,7 +16,7 @@ const books = (state = initialBooks, action) => {
         },
       ];
     }
-    case actions.REMOVED_BOOK:
+    case actions.REMOVE_BOOK:
       return state.filter((book) => book.id !== action.id);
     default:
       return state;
