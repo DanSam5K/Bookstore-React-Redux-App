@@ -59,8 +59,8 @@ const ShowBooks = (props) => {
 };
 
 ShowBooks.propTypes = {
-  books: PropTypes.isRequired,
   removeBook: PropTypes.func.isRequired,
+  books: PropTypes.func.isRequired,
 };
 
 export default connect((state) => state, { removeBook })(ShowBooks);

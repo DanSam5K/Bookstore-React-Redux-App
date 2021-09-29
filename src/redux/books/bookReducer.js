@@ -5,7 +5,9 @@ export const initialBooks = [];
 const books = (state = initialBooks, action) => {
   switch (action.type) {
     case actions.ADD_BOOK: {
-      const { id, title, author, genre } = action;
+      const {
+        id, title, author, genre,
+      } = action;
       return [
         ...state,
         {
