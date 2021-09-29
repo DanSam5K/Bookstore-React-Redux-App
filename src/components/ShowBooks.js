@@ -1,21 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
-import { removeBook } from '../action/actionCreator';
+// import { v4 as uuidv4 } from 'uuid';
+import { removeBook } from '../redux/books/books';
+// import books from '../redux/books/bookReducer';
 
 const ShowBooks = (props) => {
-  const {
-    books = [
-      {
-        id: uuidv4(),
-        title: 'Book One',
-        author: 'author',
-        genre: 'Fiction',
-      },
-    ],
-    removeBook,
-  } = props;
+  const { books, removeBook } = props;
 
   return (
     <ul>

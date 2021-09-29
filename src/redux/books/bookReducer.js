@@ -1,6 +1,20 @@
+import { v4 as uuidv4 } from 'uuid';
 import * as actions from '../../action/bookAction';
 
-export const initialBooks = [];
+export const initialBooks = [
+  {
+    id: uuidv4(),
+    title: 'Book One',
+    author: 'author',
+    genre: 'Documentation',
+  },
+  {
+    id: uuidv4(),
+    title: 'Book Two',
+    author: 'author',
+    genre: 'Documentation',
+  },
+];
 
 const books = (state = initialBooks, action) => {
   switch (action.type) {
