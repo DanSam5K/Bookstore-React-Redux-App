@@ -1,14 +1,37 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { removeBook } from "../action/actionCreator";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
+import { removeBook } from '../action/actionCreator';
 
 const ShowBooks = (props) => {
-  // console.log(props)
-  const { books, removeBook } = props;
+  const {
+    books = [
+      {
+        id: uuidv4(),
+        title: 'Book One',
+        author: 'author',
+        genre: 'Fiction',
+      },
+      {
+        id: uuidv4(),
+        title: 'Book Two',
+        author: 'author',
+        genre: 'Economy',
+      },
+      {
+        id: uuidv4(),
+        title: 'Book Three',
+        author: 'author',
+        genre: 'Documentation',
+      },
+    ],
+    removeBook,
+  } = props;
+
   return (
     <ul>
-      {bookList.map((book) => (
+      {books.map((book) => (
         <li key={book.id}>
           <div>
             <p>{book.type}</p>
@@ -17,9 +40,11 @@ const ShowBooks = (props) => {
           </div>
           <ul>
             <li>comment</li>
-            <li onClick={() => removeBook(book.id)}>Remove</li>
             <li>Edit</li>
           </ul>
+          <button type="button" onClick={() => removeBook(book.id)}>
+            Remove
+          </button>
           <div>
             <p>Completed</p>
           </div>
@@ -35,7 +60,7 @@ const ShowBooks = (props) => {
 
 ShowBooks.propTypes = {
   books: PropTypes.isRequired,
-  removeBook: PropTypes.func,
+  removeBook: PropTypes.func.isRequired,
 };
 
 export default connect((state) => state, { removeBook })(ShowBooks);

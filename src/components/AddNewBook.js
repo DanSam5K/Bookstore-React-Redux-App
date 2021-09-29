@@ -1,13 +1,12 @@
-import React from "react";
-import { useState } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { addBook } from "../redux/books/books";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { addBook } from '../action/actionCreator';
 
 const AddNewBook = ({ addBook }) => {
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
-  const [genre, setGenre] = useState("Science");
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
+  const [genre, setGenre] = useState('Science');
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
   };
@@ -61,13 +60,7 @@ const AddNewBook = ({ addBook }) => {
 };
 
 AddNewBook.propTypes = {
-  id: PropTypes.string,
-  name: PropTypes.string,
-};
-
-AddNewBook.defaultProps = {
-  id: "",
-  name: "",
+  addBook: PropTypes.func.isRequired,
 };
 
 export default connect((state) => state, { addBook })(AddNewBook);
