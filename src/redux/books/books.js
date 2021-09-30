@@ -1,8 +1,10 @@
+import { v4 as uuidv4 } from 'uuid';
 import * as actions from '../action/bookAction';
+import baseURL from './api';
 
 const initialBooks = [];
 
-const urlAPI = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/CBvlUI2K2HpcwfRuxbFJ/books';
+const urlAPI = `${baseURL}/books`;
 
 const reducer = (state = initialBooks, action) => {
   const { id, title, category } = action;
@@ -12,12 +14,14 @@ const reducer = (state = initialBooks, action) => {
         cash: 'reload',
         method: 'POST',
         body: JSON.stringify({
-          id,
+          item_id: uuidv4(),
           title,
           category,
         }),
         headers: {
           'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': true,
         },
       }).then(() => {
         window.location.reload();
@@ -25,13 +29,15 @@ const reducer = (state = initialBooks, action) => {
       return [...state, action.book];
 
     case actions.REMOVE_BOOK:
-      fetch(`${urlAPI}/${id}'`, {
+      fetch(`${urlAPI}/${id}`, {
         method: 'DELETE',
         body: JSON.stringify({
           item_id: id,
         }),
         headers: {
           'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': true,
         },
       });
       return state.filter((book) => book.id !== action.book.id);
