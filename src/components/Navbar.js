@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const NavbarComponent = () => (
+const Navbar = () => (
   <div>
     <h1>BOOKSTORE APP</h1>
     <nav>
@@ -21,4 +21,4 @@ const NavbarComponent = () => (
   </div>
 );
 
-export default NavbarComponent;
+export default Navbar;

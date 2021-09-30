@@ -1,7 +1,7 @@
-import initialBooks from './initialBooks';
-
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
+
+const initialBooks = [];
 
 export const addBook = (book) => ({
   type: ADD_BOOK,

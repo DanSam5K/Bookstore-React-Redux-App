@@ -52,33 +52,6 @@ const FormComponent = ({ submitBook }) => {
           Add Book
         </button>
       </form>
-      {/* <Form>
-        <Row>
-          <Col>
-            <Form.Control
-              placeholder="Book title"
-              ref={(el) => (inputRef.current[0] = el)}
-            />
-          </Col>
-          <Col>
-            <Form.Control
-              placeholder="Book author"
-              ref={(el) => (inputRef.current[1] = el)}
-            />
-          </Col>
-          <Form.Group>
-            <Form.Select defaultValue="Category">
-              <option>Category</option>
-              <option>Action</option>
-              <option>Drama</option>
-              <option>Romance</option>
-            </Form.Select>
-          </Form.Group>
-          <Button as={Col} variant="primary" type="submit" onClick={addBook}>
-            ADD BOOK
-          </Button>
-        </Row>
-      </Form> */}
     </div>
   );
 };
