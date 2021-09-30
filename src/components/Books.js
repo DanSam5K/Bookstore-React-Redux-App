@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import Book from './Book';
 import Form from './Form';
-import { addBook, removeBook } from '../redux/action/actionCreator';
+import { addBook, removeBook, loadBook } from '../redux/action/actionCreator';
 import store from '../redux/configureStore';
+import baseURL from '../redux/books/api';
 
 const Books = () => {
   const dispatch = useDispatch();
   const [bookInfo, setBookInfo] = useState(store.getState().booksReducer);
+  const fetchApi = `${baseURL}/books`;
 
   const updateStore = (book) => {
     const newBook = {
@@ -27,6 +29,16 @@ const Books = () => {
     const newBooks = bookInfo.filter((item) => item.id !== book.id);
     setBookInfo(newBooks);
   };
+
+  useEffect(() => {
+    const apiBooks = async () => {
+      const fetchBook = await fetch(fetchApi);
+      const book = await fetchBook.json();
+      return dispatch(loadBook(book));
+    };
+    apiBooks();
+    setBookInfo((prevState) => [...prevState]);
+  }, []);
 
   return (
     <div className="books">
