@@ -5,12 +5,10 @@ import Book from './Book';
 import Form from './Form';
 import { addBook, removeBook, loadBook } from '../redux/action/actionCreator';
 import store from '../redux/configureStore';
-import baseURL from '../redux/books/api';
 
 const Books = () => {
   const dispatch = useDispatch();
   const [bookInfo, setBookInfo] = useState(store.getState().booksReducer);
-  const fetchApi = `${baseURL}/books`;
 
   const updateStore = (book) => {
     const newBook = {
@@ -31,13 +29,7 @@ const Books = () => {
   };
 
   useEffect(() => {
-    const apiBooks = async () => {
-      const fetchBook = await fetch(fetchApi);
-      const book = await fetchBook.json();
-      return dispatch(loadBook(book));
-    };
-    apiBooks();
-    setBookInfo((prevState) => [...prevState]);
+    dispatch(loadBook());
   }, []);
 
   return (
