@@ -4,8 +4,7 @@ import * as actions from '../action/bookAction';
 
 const initialBooks = [];
 
-const urlAPI =
-  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/CBvlUI2K2HpcwfRuxbFJ/books';
+const urlAPI = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/CBvlUI2K2HpcwfRuxbFJ/books';
 
 // export const addBook = (book) => ({
 //   type: ADD_BOOK,
@@ -18,13 +17,43 @@ const urlAPI =
 // });
 
 const reducer = (state = initialBooks, action) => {
+  const { id, title, category } = action;
   switch (action.type) {
     case actions.ADD_BOOK:
+      fetch(urlAPI, {
+        cash: 'reload',
+        method: 'POST',
+        body: JSON.stringify({
+          id,
+          title,
+          category,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }).then(() => {
+        window.location.reload();
+      });
       return [...state, action.book];
 
     case actions.REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.book.id);
+      fetch(`${urlAPI}/${id}'`, {
+        method: 'DELETE',
+        body: JSON.stringify({
+          item_id: id,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
+      return state.filter((book) => book.id !== action.book.id);
+    // case actions.BOOK_GOTTEN:
+    //   return Object.keys(action.payload).map((key) => ({
+    //     id: key,
+    //     title: action.payload[key][0].title,
+    //     category: action.payload[key][0].category,
+    //   }));
     default:
       return state;
   }
