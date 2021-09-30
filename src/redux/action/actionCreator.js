@@ -9,3 +9,8 @@ export const removeBook = (book) => ({
   type: actions.REMOVE_BOOK,
   book,
 });
+
+export const loadBook = (book) => ({
+  type: actions.RETURN_BOOK,
+  book,
+});
