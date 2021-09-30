@@ -1,50 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import AddNewBook from './AddNewBook';
-import ShowBooks from './ShowBooks';
+import Book from './Book';
+import FormComponent from './Form';
+import { addBook, removeBook } from '../redux/books/books';
+import store from '../redux/configureStore';
 
-class Books extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      books: [
-        {
-          type: 'Science',
-          title: 'Book One',
-          author: 'author',
-          id: uuidv4(),
-        },
-        {
-          type: 'Economy',
-          title: 'Book Two',
-          author: 'author',
-          id: uuidv4(),
-        },
-        {
-          type: 'Documentation',
-          title: 'Book Three',
-          author: 'author',
-          id: uuidv4(),
-        },
-        {
-          type: 'Crime',
-          title: 'Book Four',
-          author: 'author',
-          id: uuidv4(),
-        },
-      ],
+const Books = () => {
+  const dispatch = useDispatch();
+  const [booksData, setBooksData] = useState(store.getState().booksReducer);
+
+  const submitBookToStore = (book) => {
+    const newBook = {
+      id: uuidv4(), // generate unique ID
+      title: book.title,
+      author: book.author,
     };
-  }
+    // dispatch an action and pass it the newBook object (your action's payload)
+    dispatch(addBook(newBook));
+    setBooksData((prevState) => [...prevState, newBook]);
+  };
 
-  render() {
-    const { books } = this.state;
-    return (
-      <div>
-        <ShowBooks bookList={books} />
-        <AddNewBook id="categories" name="categories" selected />
-      </div>
-    );
-  }
-}
+  const deleteBook = (book) => {
+    dispatch(removeBook(book));
+    const newBooks = booksData.filter((item) => item.id !== book.id);
+    setBooksData(newBooks);
+  };
+
+  return (
+    <div className="books">
+      {booksData.map((book) => (
+        <Book
+          title={book.title}
+          author={book.author}
+          key={book.id}
+          rmvBook={() => {
+            deleteBook(book);
+          }}
+        />
+      ))}
+
+      <FormComponent submitBook={submitBookToStore} />
+    </div>
+  );
+};
 
 export default Books;
