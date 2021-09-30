@@ -2,10 +2,10 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-const FormComponent = ({ submitBook }) => {
+const Form = ({ submitBook }) => {
   const inputRef = useRef([]);
 
-  const inputs = ['title', 'author'];
+  const inputs = ['title', 'author', 'genre'];
 
   useEffect(() => {
     if (inputs.length !== 0) {
@@ -15,14 +15,20 @@ const FormComponent = ({ submitBook }) => {
 
   const addBook = (e) => {
     e.preventDefault();
-    if (inputRef.current[0].value && inputRef.current[1].value) {
+    if (
+      inputRef.current[0].value
+      && inputRef.current[1].value
+      && inputRef.current[2].value
+    ) {
       const newBook = {
         title: inputRef.current[0].value,
         author: inputRef.current[1].value,
+        genre: inputRef.current[2].value,
       };
       submitBook(newBook);
       inputRef.current[0].value = '';
       inputRef.current[1].value = '';
+      inputRef.current[2].value = '';
     }
   };
 
@@ -42,7 +48,10 @@ const FormComponent = ({ submitBook }) => {
           ref={(el) => (inputRef.current[1] = el)}
           required
         />
-        <select defaultValue="Category">
+        <select
+          defaultValue="Category"
+          ref={(el) => (inputRef.current[2] = el)}
+        >
           <option>Science</option>
           <option>Economy</option>
           <option>Action</option>
@@ -56,8 +65,8 @@ const FormComponent = ({ submitBook }) => {
   );
 };
 
-export default FormComponent;
+export default Form;
 
-FormComponent.propTypes = {
+Form.propTypes = {
   submitBook: PropTypes.func.isRequired,
 };

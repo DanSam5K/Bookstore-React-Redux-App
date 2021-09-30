@@ -2,45 +2,47 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import Book from './Book';
-import FormComponent from './Form';
+import Form from './Form';
 import { addBook, removeBook } from '../redux/books/books';
 import store from '../redux/configureStore';
 
 const Books = () => {
   const dispatch = useDispatch();
-  const [booksData, setBooksData] = useState(store.getState().booksReducer);
+  const [bookInfo, setBookInfo] = useState(store.getState().booksReducer);
 
-  const submitBookToStore = (book) => {
+  const updateStore = (book) => {
     const newBook = {
       id: uuidv4(), // generate unique ID
       title: book.title,
       author: book.author,
+      genre: book.genre,
     };
     // dispatch an action and pass it the newBook object (your action's payload)
     dispatch(addBook(newBook));
-    setBooksData((prevState) => [...prevState, newBook]);
+    setBookInfo((prevState) => [...prevState, newBook]);
   };
 
   const deleteBook = (book) => {
     dispatch(removeBook(book));
-    const newBooks = booksData.filter((item) => item.id !== book.id);
-    setBooksData(newBooks);
+    const newBooks = bookInfo.filter((item) => item.id !== book.id);
+    setBookInfo(newBooks);
   };
 
   return (
     <div className="books">
-      {booksData.map((book) => (
+      {bookInfo.map((book) => (
         <Book
+          key={book.id}
           title={book.title}
           author={book.author}
-          key={book.id}
-          rmvBook={() => {
+          genre={book.genre}
+          delBook={() => {
             deleteBook(book);
           }}
         />
       ))}
 
-      <FormComponent submitBook={submitBookToStore} />
+      <Form submitBook={updateStore} />
     </div>
   );
 };
