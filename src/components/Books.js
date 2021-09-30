@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import Book from './Book';
 import Form from './Form';
-import { addBook, removeBook } from '../redux/books/books';
+import { addBook, removeBook } from '../redux/action/actionCreator';
 import store from '../redux/configureStore';
 
 const Books = () => {
