@@ -1,11 +1,10 @@
-/* eslint-disable no-return-assign */
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 const Form = ({ submitBook }) => {
   const inputRef = useRef([]);
 
-  const inputs = ['title', 'author', 'genre'];
+  const inputs = ['title', 'author', 'category'];
 
   useEffect(() => {
     if (inputs.length !== 0) {
@@ -15,20 +14,15 @@ const Form = ({ submitBook }) => {
 
   const addBook = (e) => {
     e.preventDefault();
-    if (
-      inputRef.current[0].value
-      && inputRef.current[1].value
-      && inputRef.current[2].value
-    ) {
+    if (inputRef.current[0].value && inputRef.current[2].value) {
       const newBook = {
         title: inputRef.current[0].value,
-        author: inputRef.current[1].value,
-        genre: inputRef.current[2].value,
+        category: inputRef.current[2].value,
       };
       submitBook(newBook);
       inputRef.current[0].value = '';
       inputRef.current[1].value = '';
-      inputRef.current[2].value = '';
+      inputRef.current[2].value = 'Category';
     }
   };
 
