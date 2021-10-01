@@ -2,9 +2,8 @@ import axios from 'axios';
 import * as actions from './bookAction';
 import baseURL from './api';
 
-const urlAPI = `${baseURL}/books`;
 export const addBook = (book) => async (dispatch) => {
-  const res = await axios.post(urlAPI, {
+  const res = await axios.post(baseURL, {
     item_id: book.item_id,
     title: book.title,
     category: book.category,
@@ -19,7 +18,7 @@ export const addBook = (book) => async (dispatch) => {
 };
 
 export const removeBook = (bookId) => async (dispatch) => {
-  const res = await axios.delete(`${urlAPI}/${bookId}`);
+  const res = await axios.delete(`${baseURL}/${bookId}`);
   const deleted = await res.data;
   if (deleted) {
     dispatch({
@@ -30,7 +29,7 @@ export const removeBook = (bookId) => async (dispatch) => {
 };
 
 export const loadBook = () => async (dispatch) => {
-  const res = await axios.get(urlAPI);
+  const res = await axios.get(baseURL);
   const data = await res.data;
   if (data) {
     const objectArray = Object.entries(data);
