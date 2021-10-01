@@ -7,7 +7,7 @@
 
 
 
-![screenshot](./app_screenshot.png)
+![screenshot](./src/assets/images/screenshot.jpeg)
 ## Built With 🔨
 
 - Create React App
