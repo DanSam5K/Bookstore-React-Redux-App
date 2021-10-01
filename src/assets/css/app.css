@@ -20,6 +20,10 @@
   margin: auto;
 }
 
+.max-width-90 {
+  max-width: 90%;
+}
+
 /* Small screens less than 720px */
 @media screen and (max-width: 720px) {
   .flex-row * { margin: 5px 0; }
