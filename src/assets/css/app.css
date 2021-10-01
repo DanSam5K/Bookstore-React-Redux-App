@@ -6,11 +6,16 @@
   text-transform: uppercase;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
 
-.backBG{
+.backBG {
   padding: 8em 4em;
 }
 
@@ -35,20 +40,24 @@ h1, h2, h3, h4, h5, h6 {
 .flex-row {
   align-items: center;
   display: flex;
-  flex-wrap: wrap;  
-  justify-content: flex-start;  
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .flex-row * {
   margin: 5px 5px 5px 5px;
-  padding: 5px  0px 5px 0px;  
+  padding: 5px 0 5px 0;
 }
 
 /* Small screens less than 720px */
 @media screen and (max-width: 720px) {
-  .flex-row * { margin: 5px 0; }
-  .max-width-90 { width: 99%; margin: auto;}
-  .backBG { padding: 0;}
-  .container { max-width: none; }
-}
+  .flex-row * {
+    margin: 5px 0;
+  }
 
+  /* .max-width-90 { width: 99%; margin: auto; }
+  .backBG { padding: 0; } */
+  .container {
+    max-width: none;
+  }
+}

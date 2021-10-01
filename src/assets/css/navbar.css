@@ -1,13 +1,13 @@
 .react-logo {
   height: 10vmin;
-  margin-left: auto !important; 
+  margin-left: auto !important;
   pointer-events: none;
 }
 
 .text-grey { color: #888; }
 
 .bg-white {
-  background-color: #FFF;
+  background-color: #fff;
 }
 
 .round-top {
@@ -19,7 +19,7 @@
 }
 
 .app-title {
-  color: #0692FF;
+  color: #0692ff;
   font-size: 4vmin;
 }
 
@@ -39,6 +39,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
