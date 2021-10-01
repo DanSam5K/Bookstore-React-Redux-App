@@ -1,45 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import Book from './Book';
 import Form from './Form';
 import { addBook, removeBook, loadBook } from '../redux/action/actionCreator';
-import store from '../redux/configureStore';
+// import store from '../redux/configureStore';
 
 const Books = () => {
   const dispatch = useDispatch();
-  const [bookInfo, setBookInfo] = useState(store.getState().booksReducer);
-
-  const updateStore = (book) => {
-    const newBook = {
-      id: uuidv4(), // generate unique ID
-      title: book.title,
-      author: book.author,
-      genre: book.genre,
-    };
-    // dispatch an action and pass it the newBook object (your action's payload)
-    dispatch(addBook(newBook));
-    setBookInfo((prevState) => [...prevState, newBook]);
-  };
-
-  const deleteBook = (book) => {
-    dispatch(removeBook(book));
-    const newBooks = bookInfo.filter((item) => item.id !== book.id);
-    setBookInfo(newBooks);
-  };
+  const bookInfo = useSelector((state) => state.booksReducer);
 
   useEffect(() => {
     dispatch(loadBook());
   }, []);
 
+  const updateStore = (book) => {
+    const newBook = {
+      item_id: uuidv4(),
+      title: book.title,
+      category: book.category,
+    };
+    dispatch(addBook(newBook));
+  };
+
+  const deleteBook = (book) => {
+    dispatch(removeBook(book.item_id));
+  };
+
   return (
     <div className="books">
       {bookInfo.map((book) => (
         <Book
-          key={book.id}
+          key={bookInfo.indexOf(book)}
           title={book.title}
-          author={book.author}
-          genre={book.genre}
+          category={book.category}
           delBook={() => {
             deleteBook(book);
           }}
