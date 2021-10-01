@@ -23,10 +23,10 @@
 - React
 - Redux
 - React-Redux
+- Netlify
 ## Deployment Live Demo
 
-<!-- - [Live Demo On Heroku](https://dansam-math-magician.herokuapp.com/)
-- [Live Demo On Netlify](https://objective-hopper-31e2ea.netlify.app/) -->
+- [Live Demo On Netlify](https://suspicious-kepler-d8a245.netlify.app/BookList)
 ### Prerequisites
 
 - IDE to edit and run the code (We use Visual Studio Code 🔥).
