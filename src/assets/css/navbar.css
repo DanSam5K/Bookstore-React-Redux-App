@@ -1,0 +1,68 @@
+.react-logo {
+  height: 10vmin;
+  margin-left: auto !important; 
+  pointer-events: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.max-width-90 {
+  max-width: 90%;
+}
+
+.text-grey { color: #888; }
+
+.bg-white {
+  background-color: #FFF;
+}
+
+.round-top {
+  border-radius: 0.3em 0.3em 0 0;
+}
+
+.m-b {
+  margin-bottom: 4px;
+}
+
+.flex-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;  
+  justify-content: flex-start;  
+}
+
+.flex-row * {
+  margin: 5px 5px 5px 5px;
+  padding: 5px  0px 5px 0px;  
+}
+
+.app-title {
+  color: #0692FF;
+  font-size: 4vmin;
+}
+
+/* Small screens less than 720px */
+@media screen and (max-width: 720px) {
+  .flex-row * { margin: 5px 0; }
+  .react-logo { order: 2; }
+  .max-width-90 { width: 99%; margin: auto;}
+  .backBG { padding: 0;}
+  .container { max-width: none; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .react-logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,31 @@
+.App {
+  overflow: hidden;
+}
+
+.backBG{
+  padding: 8em 4em;
+}
+
+.container {
+  max-width: 1400px;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.bg-dark-grey {
+  background-color: #f3f4f8;
+}
+
+.center {
+  margin: auto;
+}
+
+/* Small screens less than 720px */
+@media screen and (max-width: 720px) {
+  .flex-row * { margin: 5px 0; }
+  .react-logo { order: 2; }
+  .max-width-90 { width: 99%; margin: auto;}
+  .backBG { padding: 0;}
+  .container { max-width: none; }
+}
+
