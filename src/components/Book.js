@@ -2,14 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../assets/css/book.css';
 
-const Book = ({
-  title, category, author, delBook,
-}) => (
+const Book = ({ title, category, delBook }) => (
   <div className="book">
     <div id="left">
       <h5 className="category">{category}</h5>
       <h2 className="title">{title}</h2>
-      <h4 className="author">{author}</h4>
+      <h4 className="author">John Doe</h4>
       <div className="actions">
         <button type="button" disabled>
           Comments
@@ -42,6 +40,5 @@ export default Book;
 Book.propTypes = {
   title: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
   delBook: PropTypes.func.isRequired,
 };

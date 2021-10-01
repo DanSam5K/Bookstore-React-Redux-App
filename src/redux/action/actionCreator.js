@@ -7,7 +7,6 @@ export const addBook = (book) => async (dispatch) => {
     item_id: book.item_id,
     title: book.title,
     category: book.category,
-    author: book.author,
   });
   const created = await res.data;
   if (created === 'Created') {
