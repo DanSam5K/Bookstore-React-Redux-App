@@ -1,28 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../assets/css/book.css';
 
 const Book = ({ title, category, delBook }) => (
-  <>
-    <div>
-      <div>
-        <h4>Action</h4>
-        <p>{title}</p>
-        <p>{category}</p>
-        <button type="button" className="book-btn" onClick={delBook}>
+  <div className="book">
+    <div id="left">
+      <h5 className="category">{category}</h5>
+      <h2 className="title">{title}</h2>
+      <h4 className="author">Dan Sam</h4>
+      <div className="actions">
+        <button type="button" disabled>
+          Comments
+        </button>
+        <button type="button" onClick={delBook}>
           Remove
         </button>
-      </div>
-      <div>
-        <h6>65%</h6>
-        <p>Completed</p>
-      </div>
-      <div>
-        <h6>Current chapter</h6>
-        <p>Chapter 17</p>
-        <button type="button">Update progress</button>
+        <button type="button" disabled>
+          Edit
+        </button>
       </div>
     </div>
-  </>
+    <div id="center">
+      <div className="pie-graph" />
+      <div className="percent">
+        <h1 className="percentage">64%</h1>
+        <h4 className="completed">Completed</h4>
+      </div>
+    </div>
+    <div id="right">
+      <div className="current all-caps">Current Chapter</div>
+      <div className="chapter">Chapter 11</div>
+      <button type="button">Update Progress</button>
+    </div>
+  </div>
 );
 
 export default Book;
