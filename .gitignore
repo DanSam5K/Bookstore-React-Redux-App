@@ -9,9 +9,9 @@ api.txt
 
 # testing
 /coverage
-# .eslintrc.json
+.eslintrc.json
 # .babelrc
-# .stylelintrc.json
+.stylelintrc.json
 
 # production
 /build
