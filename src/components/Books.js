@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 import Book from './Book';
 import Form from './Form';
 import { addBook, removeBook, loadBook } from '../redux/action/actionCreator';
-// import store from '../redux/configureStore';
 
 const Books = () => {
   const dispatch = useDispatch();

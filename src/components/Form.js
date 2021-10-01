@@ -1,4 +1,3 @@
-/* eslint-disable no-return-assign */
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
