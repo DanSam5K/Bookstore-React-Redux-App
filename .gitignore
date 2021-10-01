@@ -9,7 +9,7 @@ api.txt
 
 # testing
 /coverage
-.eslintrc.json
+# .eslintrc.json
 .babelrc
 .stylelintrc.json
 
