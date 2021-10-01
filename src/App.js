@@ -10,7 +10,7 @@ const App = () => (
     <Router>
       <Navbar />
       <Switch>
-        <div className="App">
+        <div className="app">
           <div className="backBG bg-dark-grey">
             <div className="container center">
               <Route path="/BookList">

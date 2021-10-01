@@ -1,4 +1,4 @@
-.App {
+.app {
   overflow: hidden;
 }
 
@@ -16,11 +16,11 @@ h6 {
 }
 
 .backBG {
-  padding: 8em 4em;
+  padding: 2em 5em;
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1200px;
   padding-left: 1em;
   padding-right: 1em;
 }
@@ -49,15 +49,12 @@ h6 {
   padding: 5px 0 5px 0;
 }
 
-/* Small screens less than 720px */
 @media screen and (max-width: 720px) {
   .flex-row * {
     margin: 5px 0;
   }
-
-  /* .max-width-90 { width: 99%; margin: auto; }
-  .backBG { padding: 0; } */
-  .container {
+  
+	.container {
     max-width: none;
   }
 }

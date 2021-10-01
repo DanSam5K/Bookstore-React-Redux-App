@@ -1,5 +1,23 @@
+.nav-links {
+  font-size: 1.2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  text-align: center;
+  width: 3.688rem;
+  color: var(--black-two);
+  font-size: 0.813rem;
+  font-weight: normal;
+  margin: 1.125rem 0 0.688rem 3rem;
+}
+
+.nav-links a:hover {
+  font-weight: bold;
+}
+
 .react-logo {
-  height: 10vmin;
+  height: 7vmin;
   margin-left: auto !important;
   pointer-events: none;
 }
@@ -23,24 +41,8 @@
   font-size: 4vmin;
 }
 
-/* Small screens less than 720px */
 @media screen and (max-width: 720px) {
   .react-logo { order: 2; }
   .container { max-width: none; }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .react-logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
