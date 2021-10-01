@@ -26,7 +26,7 @@
 - Netlify
 ## Deployment Live Demo
 
-- [Live Demo On Netlify](https://suspicious-kepler-d8a245.netlify.app/BookList)
+- [Live Demo On Netlify](https://competent-visvesvaraya-93ce0d.netlify.app/BookList)
 ### Prerequisites
 
 - IDE to edit and run the code (We use Visual Studio Code 🔥).
