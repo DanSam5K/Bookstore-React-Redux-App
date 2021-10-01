@@ -100,7 +100,6 @@
   border-bottom: 10px solid #2274ee;
 }
 
-/* Small screens less than 720px */
 @media screen and (max-width: 720px) {
   .actions button:nth-child(2) {
     padding: 6px;

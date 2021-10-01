@@ -35,18 +35,24 @@ const Form = ({ submitBook }) => {
           <input
             type="text"
             placeholder="Book title"
-            ref={(el) => (inputRef.current[0] = el)}
+            ref={(el) => {
+              inputRef.current[0] = el;
+            }}
             required
           />
           <input
             type="text"
             placeholder="Book Author"
-            ref={(el) => (inputRef.current[1] = el)}
+            ref={(el) => {
+              inputRef.current[1] = el;
+            }}
             required
           />
           <select
             defaultValue="Category"
-            ref={(el) => (inputRef.current[2] = el)}
+            ref={(el) => {
+              inputRef.current[2] = el;
+            }}
           >
             <option>Science</option>
             <option>Drama</option>
