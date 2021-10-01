@@ -2,6 +2,14 @@
   overflow: hidden;
 }
 
+.all-caps {
+  text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
 .backBG{
   padding: 8em 4em;
 }
@@ -24,10 +32,21 @@
   max-width: 90%;
 }
 
+.flex-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;  
+  justify-content: flex-start;  
+}
+
+.flex-row * {
+  margin: 5px 5px 5px 5px;
+  padding: 5px  0px 5px 0px;  
+}
+
 /* Small screens less than 720px */
 @media screen and (max-width: 720px) {
   .flex-row * { margin: 5px 0; }
-  .react-logo { order: 2; }
   .max-width-90 { width: 99%; margin: auto;}
   .backBG { padding: 0;}
   .container { max-width: none; }
