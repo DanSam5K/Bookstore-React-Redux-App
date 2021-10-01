@@ -19,7 +19,6 @@ const BookList = () => {
       item_id: uuidv4(),
       title: book.title,
       category: book.category,
-      author: book.author,
     };
     dispatch(addBook(newBook));
   };
@@ -36,7 +35,6 @@ const BookList = () => {
             key={bookInfo.indexOf(book)}
             title={book.title}
             category={book.category}
-            author={book.author}
             delBook={() => {
               deleteBook(book);
             }}
