@@ -12,6 +12,7 @@ api.txt
 .eslintrc.json
 # .babelrc
 .stylelintrc.json
+# .fix
 
 # production
 /build
