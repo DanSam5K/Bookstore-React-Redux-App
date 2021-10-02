@@ -4,8 +4,9 @@ import { v4 as uuidv4 } from 'uuid';
 import Book from './Book';
 import Form from './Form';
 import { addBook, removeBook, loadBook } from '../redux/action/actionCreator';
+import '../assets/css/bookList.css';
 
-const Books = () => {
+const BookList = () => {
   const dispatch = useDispatch();
   const bookInfo = useSelector((state) => state.booksReducer);
 
@@ -27,21 +28,23 @@ const Books = () => {
   };
 
   return (
-    <div className="books">
-      {bookInfo.map((book) => (
-        <Book
-          key={bookInfo.indexOf(book)}
-          title={book.title}
-          category={book.category}
-          delBook={() => {
-            deleteBook(book);
-          }}
-        />
-      ))}
+    <main className="bg-grey">
+      <div className="center max-width-90 bookSection">
+        {bookInfo.map((book) => (
+          <Book
+            key={bookInfo.indexOf(book)}
+            title={book.title}
+            category={book.category}
+            delBook={() => {
+              deleteBook(book);
+            }}
+          />
+        ))}
+      </div>
 
       <Form submitBook={updateStore} />
-    </div>
+    </main>
   );
 };
 
-export default Books;
+export default BookList;

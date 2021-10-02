@@ -10,7 +10,7 @@ api.txt
 # testing
 /coverage
 # .eslintrc.json
-.babelrc
+# .babelrc
 .stylelintrc.json
 
 # production

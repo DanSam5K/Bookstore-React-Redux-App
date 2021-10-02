@@ -2,12 +2,17 @@
 
 # BookStore React-Redux Project
 
-> This project I only lay foundations for my Bookstore website. I create a React and Redux app. I structure my files using the "feature folder" approach. I also set up routing using React Router.
+> The Bookstore is a website similar to the ["Awesome Books" I built with JavaScript](https://dansam5k.github.io/Awesome-Books/). In this project I was able to accomplished the following with react, react-redux:
+- Display a list of books.
+- Add a book.
+- Remove a selected book.
+- By building this application, I learn how to use React and Redux and much more.
+
+> I was also able to connect Redux with an API - the [Bookstore API](https://www.notion.so/Bookstore-API-51ea269061f849118c65c0a53e88a739).
+> Finally, after building the Bookstore website functionality, I was able to add styling, using [Zeplin](https://app.zeplin.io/login) as a collaboration tool.
 
 
-
-
-![screenshot](./app_screenshot.png)
+![screenshot](./src/assets/images/screenshot.jpeg)
 ## Built With 🔨
 
 - Create React App
@@ -18,10 +23,10 @@
 - React
 - Redux
 - React-Redux
+- Netlify
 ## Deployment Live Demo
 
-<!-- - [Live Demo On Heroku](https://dansam-math-magician.herokuapp.com/)
-- [Live Demo On Netlify](https://objective-hopper-31e2ea.netlify.app/) -->
+- [Live Demo On Netlify](https://deploy-preview-4--competent-visvesvaraya-93ce0d.netlify.app/?utm_source=github&utm_campaign=bot_dp)
 ### Prerequisites
 
 - IDE to edit and run the code (We use Visual Studio Code 🔥).

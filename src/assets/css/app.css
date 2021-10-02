@@ -1,0 +1,60 @@
+.app {
+  overflow: hidden;
+}
+
+.all-caps {
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.backBG {
+  padding: 2em 5em;
+}
+
+.container {
+  max-width: 1200px;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.bg-dark-grey {
+  background-color: #f3f4f8;
+}
+
+.center {
+  margin: auto;
+}
+
+.max-width-90 {
+  max-width: 90%;
+}
+
+.flex-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.flex-row * {
+  margin: 5px 5px 5px 5px;
+  padding: 5px 0 5px 0;
+}
+
+@media screen and (max-width: 720px) {
+  .flex-row * {
+    margin: 5px 0;
+  }
+
+  .container {
+    max-width: none;
+  }
+}

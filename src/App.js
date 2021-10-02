@@ -1,23 +1,28 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Books from './components/Books';
+import BookList from './components/BookList';
 import Categories from './redux/category/Categories';
 import Navbar from './components/Navbar';
+import './assets/css/app.css';
 
 const App = () => (
   <>
     <Router>
       <Navbar />
-      <div>
-        <Switch>
-          <Route path="/categories">
-            <Categories />
-          </Route>
-          <Route path="/">
-            <Books />
-          </Route>
-        </Switch>
-      </div>
+      <Switch>
+        <div className="app">
+          <div className="backBG bg-dark-grey">
+            <div className="container center">
+              <Route path="/BookList">
+                <BookList />
+              </Route>
+              <Route path="/categories">
+                <Categories />
+              </Route>
+            </div>
+          </div>
+        </div>
+      </Switch>
     </Router>
   </>
 );

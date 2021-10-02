@@ -1,0 +1,47 @@
+.nav-links {
+  font-size: 1.2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  text-align: center;
+  width: 3.688rem;
+  color: var(--black-two);
+  font-size: 0.813rem;
+  font-weight: normal;
+  margin: 1.125rem 0 0.688rem 3rem;
+}
+
+.nav-links a:hover {
+  font-weight: bold;
+}
+
+.react-logo {
+  height: 7vmin;
+  margin-left: auto !important;
+  pointer-events: none;
+}
+
+.text-grey { color: #888; }
+
+.bg-white {
+  background-color: #fff;
+}
+
+.round-top {
+  border-radius: 0.3em 0.3em 0 0;
+}
+
+.m-b {
+  margin-bottom: 4px;
+}
+
+.app-title {
+  color: #0692ff;
+  font-size: 4vmin;
+}
+
+@media screen and (max-width: 720px) {
+  .react-logo { order: 2; }
+  .container { max-width: none; }
+}
